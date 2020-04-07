@@ -1,6 +1,10 @@
 pipeline {
    agent any
 
+    environment {
+        NUGET_KEY = 'abc'
+    }
+
    stages {
       stage('Hello') {
          steps {
@@ -9,7 +13,7 @@ pipeline {
       }
       stage('Test') {
          steps {
-            echo 'Hello Test'
+            echo "${env.NUGET_KEY}"
          }
       }
    }
