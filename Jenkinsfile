@@ -16,5 +16,10 @@ pipeline {
             echo "${env.NUGET_KEY}"
          }
       }
+      stage('Test') {
+         steps {
+            sh label: '', script: 'ls'
+         }
+      }
    }
 }
